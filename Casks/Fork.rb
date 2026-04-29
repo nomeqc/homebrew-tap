@@ -1,4 +1,4 @@
-cask "Fork" do
+cask "fork" do
   version "2.63.2"
   sha256 :no_check # 先完成：跳过哈希校验，防止以后更新 DMG 时报错
 
