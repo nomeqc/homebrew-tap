@@ -1,0 +1,68 @@
+name: Auto Generate README
+
+# 触发条件：当推送到 main 或 master 分支，且 Casks 目录下的 .rb 文件有变动时
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'Casks/*.rb'
+  # 允许手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 生成 README 内容
+        run: |
+          # 动态获取用户名和仓库名
+          REPO_FULL="${{ github.repository }}"
+          OWNER=$(echo $REPO_FULL | cut -d'/' -f1)
+          REPO_NAME=$(echo $REPO_FULL | cut -d'/' -f2)
+          
+          # 去除仓库名的 "homebrew-" 前缀，获取真实的 tap 名称
+          TAP_NAME="${REPO_NAME#homebrew-}"
+          BREW_TAP="$OWNER/$TAP_NAME"
+
+          # 初始化 README 文件
+          echo "# 📦 我的私人 Homebrew 源" > README.md
+          echo "" >> README.md
+          echo "这是一个通过 GitHub Actions 自动维护的私人软件源。" >> README.md
+          echo "" >> README.md
+          echo "## 🚀 快速使用" >> README.md
+          echo "" >> README.md
+          echo "你可以先将此源添加到本地：" >> README.md
+          echo "\`\`\`bash" >> README.md
+          echo "brew tap $BREW_TAP" >> README.md
+          echo "\`\`\`" >> README.md
+          echo "" >> README.md
+          echo "## 🛠 软件安装列表" >> README.md
+          echo "" >> README.md
+          echo "| 软件名称 (Cask) | 一键安装命令 |" >> README.md
+          echo "| :--- | :--- |" >> README.md
+
+          # 遍历 Casks 目录下的所有 .rb 文件
+          shopt -s nullglob
+          for file in Casks/*.rb; do
+            if [ -f "$file" ]; then
+              # 获取文件名（不带扩展名）
+              filename=$(basename -- "$file")
+              caskname="${filename%.*}"
+              # 写入表格行
+              echo "| **$caskname** | \`brew install --cask $BREW_TAP/$caskname\` |" >> README.md
+            fi
+          done
+
+      - name: 提交并推送到仓库
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "docs: 🤖 自动更新 README.md 安装列表"
+          file_pattern: 'README.md'
