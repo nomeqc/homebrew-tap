@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
     text = input_file.read_text()
     for line in text.splitlines():
-        result = re.search(r"(https://.+?dmg)\s+(.+dmg)\s+(.+)", line.strip())
+        result = re.search(r"(https?://.+?dmg)\s+(.+dmg)\s+(.+)", line.strip())
         if not result:
             continue
         url = encodeURI(result[1])
