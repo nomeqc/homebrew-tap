@@ -2,7 +2,7 @@ import re
 from pathlib import Path
 from urllib import parse
 
-"""
+"""使用说明：
 https://github.com/nomeqc/my-release/releases/download/20260429/Alfred_5.7.2.dmg	Alfred_5.7.2.dmg	Alfred
 
 ==>
