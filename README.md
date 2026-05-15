@@ -19,6 +19,7 @@ brew tap nomeqc/tap
 | **flacbox** | `brew install --cask nomeqc/tap/flacbox` |
 | **gitautopushgui** | `brew install --cask nomeqc/tap/gitautopushgui` |
 | **istatmenus** | `brew install --cask nomeqc/tap/istatmenus` |
+| **localtimegui** | `brew install --cask nomeqc/tap/localtimegui` |
 | **maczip** | `brew install --cask nomeqc/tap/maczip` |
 | **menuist** | `brew install --cask nomeqc/tap/menuist` |
 | **numi** | `brew install --cask nomeqc/tap/numi` |
