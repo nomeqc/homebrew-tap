@@ -15,6 +15,7 @@ brew tap nomeqc/tap
 | :--- | :--- |
 | **alfred** | `brew install --cask nomeqc/tap/alfred` |
 | **araxismerge** | `brew install --cask nomeqc/tap/araxismerge` |
+| **codebackupgui** | `brew install --cask nomeqc/tap/codebackupgui` |
 | **dufsgui** | `brew install --cask nomeqc/tap/dufsgui` |
 | **flacbox** | `brew install --cask nomeqc/tap/flacbox` |
 | **gitautopushgui** | `brew install --cask nomeqc/tap/gitautopushgui` |
@@ -23,8 +24,10 @@ brew tap nomeqc/tap
 | **maczip** | `brew install --cask nomeqc/tap/maczip` |
 | **menuist** | `brew install --cask nomeqc/tap/menuist` |
 | **numi** | `brew install --cask nomeqc/tap/numi` |
+| **ocrspace** | `brew install --cask nomeqc/tap/ocrspace` |
 | **pixpin** | `brew install --cask nomeqc/tap/pixpin` |
 | **proxyman** | `brew install --cask nomeqc/tap/proxyman` |
 | **reveal** | `brew install --cask nomeqc/tap/reveal` |
+| **scriptmanagergui** | `brew install --cask nomeqc/tap/scriptmanagergui` |
 | **sublimetext** | `brew install --cask nomeqc/tap/sublimetext` |
 | **zipic** | `brew install --cask nomeqc/tap/zipic` |
