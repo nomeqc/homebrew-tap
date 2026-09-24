@@ -1,9 +1,9 @@
 cask "istatmenus" do
-  version "7.20.7"
+  version "7.50.1"
   sha256 :no_check # 跳过哈希校验，防止以后更新 DMG 时报错
 
   # 替换为你实际的 DMG 下载链接
-  url "https://github.com/nomeqc/my-release/releases/download/20260429/iStat_Menus_7.20.7.dmg"
+  url "https://github.com/nomeqc/my-release/releases/download/20260429/iStat_Menus_7.50.1.dmg"
   
   name "iStat Menus"
   desc ""
