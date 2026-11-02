@@ -29,5 +29,6 @@ brew tap nomeqc/tap
 | **proxyman** | `brew install --cask nomeqc/tap/proxyman` |
 | **reveal** | `brew install --cask nomeqc/tap/reveal` |
 | **scriptmanagergui** | `brew install --cask nomeqc/tap/scriptmanagergui` |
+| **soulver** | `brew install --cask nomeqc/tap/soulver` |
 | **sublimetext** | `brew install --cask nomeqc/tap/sublimetext` |
 | **zipic** | `brew install --cask nomeqc/tap/zipic` |
